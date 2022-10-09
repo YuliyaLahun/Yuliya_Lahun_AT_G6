@@ -1,10 +1,10 @@
 public class FirstClass {
 
-    private int x = 2;
-    private int y = 3;
+    private final int x = 2;
+    private final int y = 3;
 
-    private String name = "Bugagashenki";
-    private String surname = "Bu";
+    private final String name = "Bugagashenki";
+    private final String surname = "Bu";
 
     public void doMath() {
         System.out.println(x + y);

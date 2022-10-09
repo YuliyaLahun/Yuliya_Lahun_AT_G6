@@ -7,7 +7,7 @@ public class Bottle {
 
     Water water;
     Bubble[] bubbles;
-    private double bottleVolume;
+    private final double bottleVolume;
 
     public Bottle(double bottleVolume, Water water) {
         this.bottleVolume = bottleVolume;

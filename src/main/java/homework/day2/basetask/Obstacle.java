@@ -28,7 +28,7 @@ public class Obstacle {
         this.severity = severity;
     }
 
-    public void printObstacleDetails(){
+    public void printObstacleDetails() {
         System.out.printf("Возникло %s препятствиие %s%n", severity, description);
     }
 }

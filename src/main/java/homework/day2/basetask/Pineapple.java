@@ -28,8 +28,8 @@ public class Pineapple {
         this.heatCapacity = heatCapacity;
     }
 
-    public void printPineappleDetails(){
-        if (Double.compare(heatCapacity, 2140)==1){
+    public void printPineappleDetails() {
+        if (Double.compare(heatCapacity, 2140) == 1) {
             System.out.printf("Я ананас, теплоемкость которого больше, чем у ветчины%n");
         } else {
             System.out.printf("В ветчине тепла запасется больше :(%n");

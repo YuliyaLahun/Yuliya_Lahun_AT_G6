@@ -11,16 +11,13 @@ public class killArray {
             int[] array2 = new int[array.length - x];
 
             System.out.println(array[i]);
-                if(i< array.length-1){
-                    array2[i] = array[i];
-                }
-                x++;
-
+            if (i < array.length - 1) {
+                array2[i] = array[i];
             }
+            x++;
+
         }
-
-
-
+    }
 
 
     public static void main(String[] args) {
