@@ -12,7 +12,7 @@ public class Bubble {
         this.gazComposition = gazComposition;
     }
 
-    public void burst() {
+    public void cramp() {
         System.out.println("Cramp!");
     }
 
