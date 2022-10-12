@@ -10,9 +10,9 @@ public class Runner {
         Bottle bottleLiter = new Bottle(1.0, sparklingWater);
         Bottle bottleLiterAndAHalf = new Bottle(1.5, sparklingWater);
 
-        bottleHalfLiter.open(sparklingWater.pump(new Bubble[5000]));
-        bottleLiter.open(sparklingWater.pump(new Bubble[10000]));
-        bottleLiterAndAHalf.open(sparklingWater.pump(new Bubble[15000]));
+        bottleHalfLiter.open();
+        bottleLiter.open();
+        bottleLiterAndAHalf.open();
 
     }
 }

@@ -6,15 +6,30 @@ package bubbles;
 public class Bottle {
 
     Water water;
-    Bubble[] bubbles;
-    private final double bottleVolume;
+    //Bubble[] bubbles;
+    private double bottleVolume;
+
+    public Bottle(double bottleVolume) {
+        int quantityOfBubbles = (int) (10000 * bottleVolume);
+        Bubble bubble = new Bubble("gaz");
+        Bubble[] bubbles = new Bubble[quantityOfBubbles];
+        ((SparklingWater) water).setBubbles(bubbles);
+    }
 
     public Bottle(double bottleVolume, Water water) {
         this.bottleVolume = bottleVolume;
         this.water = water;
     }
 
-    public void open(Bubble[] bubbles) {
-        ((SparklingWater) water).degas(bubbles);
+    public void open() {
+        ((SparklingWater) water).degas();
+    }
+
+    public Water getWater() {
+        return water;
+    }
+
+    public void setWater(Water water) {
+        this.water = water;
     }
 }
