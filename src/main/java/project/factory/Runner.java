@@ -1,4 +1,7 @@
-package bubbles;
+package project.factory;
+
+import project.boxing.Bottle;
+import project.liquids.SparklingWater;
 
 //- [ ] в нем создать 3 бутылки, объёмом 0.5, 1, 1.5 лира с газировкой
 //- [ ] - открыть поочередно все бутылки и выпустить из них газ

@@ -1,4 +1,8 @@
-package bubbles;
+package project.boxing;
+
+import project.factory.Bubble;
+import project.liquids.SparklingWater;
+import project.liquids.Water;
 
 //- [ ] - у него есть обьем
 //- [ ] - есть вода
@@ -10,7 +14,6 @@ public class Bottle {
 
     public Bottle(double bottleVolume) {
         int quantityOfBubbles = (int) (10000 * bottleVolume);
-        Bubble bubble = new Bubble("gaz");
         Bubble[] bubbles = new Bubble[quantityOfBubbles];
         ((SparklingWater) water).setBubbles(bubbles);
     }

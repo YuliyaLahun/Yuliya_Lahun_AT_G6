@@ -1,4 +1,6 @@
-package bubbles;
+package project.liquids;
+
+import project.factory.Bubble;
 
 //-  создать класс SparklingWater, являющийся дочерним Water
 //- [ ] - у газировки есть пузырьки
