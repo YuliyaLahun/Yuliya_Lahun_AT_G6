@@ -6,7 +6,6 @@ package bubbles;
 public class Bottle {
 
     Water water;
-    //Bubble[] bubbles;
     private double bottleVolume;
 
     public Bottle(double bottleVolume) {
@@ -21,8 +20,12 @@ public class Bottle {
         this.water = water;
     }
 
+    public void warm(int temperature) {
+        this.water.setTemperature(temperature);
+    }
+
     public void open() {
-        ((SparklingWater) water).degas();
+        ((SparklingWater) water).setOpened(true);
     }
 
     public Water getWater() {
