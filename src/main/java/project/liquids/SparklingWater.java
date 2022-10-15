@@ -29,7 +29,7 @@ public class SparklingWater extends Water {
     }
 
     public void setOpened(boolean isOpened) {
-        this.isOpened = true;
+        this.isOpened = isOpened;
     }
 
     private void isOpened() {
@@ -48,6 +48,8 @@ public class SparklingWater extends Water {
         return isSparkle;
     }
 
+    //- [ ] ------ есть приватный метод degas(), который каждую секунду
+    // выпускает по партии пузырьков из рассчета 10 + 5 * температура_воды
     public void degas() {
         System.out.println("Degas is started...");
 //    TODO: implement me
