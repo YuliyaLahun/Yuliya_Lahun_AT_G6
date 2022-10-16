@@ -1,6 +1,8 @@
 package project.liquids;
 
-import project.factory.Bubble;
+import project.substance.Bubble;
+
+import static java.lang.System.out;
 
 //-  создать класс SparklingWater, являющийся дочерним Water
 //- [ ] - у газировки есть пузырьки
@@ -10,7 +12,6 @@ import project.factory.Bubble;
 public class SparklingWater extends Water {
 
     private Bubble[] bubbles;
-
     private boolean isOpened;
 
     public SparklingWater() {
@@ -26,7 +27,7 @@ public class SparklingWater extends Water {
     }
 
     public void pump() {
-        System.out.println("Setting bubbles to the water");
+        out.println("Setting bubbles to the water");
         this.setBubbles(bubbles);
     }
 
@@ -34,9 +35,9 @@ public class SparklingWater extends Water {
         this.isOpened = isOpened;
     }
 
-    private void isOpened() {
+    public void isOpened() {
         if (this.isOpened) {
-            System.out.println("The bottle is opened, starting degas");
+            out.println("The bottle is opened, starting degas");
             this.degas();
         }
     }
@@ -46,22 +47,18 @@ public class SparklingWater extends Water {
         if (this.getBubbles().length > 0) {
             isSparkle = true;
         }
-        System.out.printf("Checking if the water is sparkle: %s", isSparkle);
+        out.printf("Checking if the water is sparkle: %s", isSparkle);
         return isSparkle;
     }
 
     //- [ ] ------ есть приватный метод degas(), который каждую секунду
     // выпускает по партии пузырьков из рассчета 10 + 5 * температура_воды
     public void degas() {
-        System.out.println("Degas is started...");
-//    TODO: implement me
-//     public void degas(Bubble[] bubbles) {
-//        for (int i = 0; i < bubbles.length - 1; i++) {
-//            bubbles[i].cramp();
-//
-//        }
-//    }
-
+        out.println("Degas is started...");
+        for (int i = 0; i < bubbles.length - 1; i++) {
+            bubbles[i].cramp();
+            bubbles[i] = null;
+        }
     }
 
 }
