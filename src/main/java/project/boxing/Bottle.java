@@ -1,6 +1,6 @@
 package project.boxing;
 
-import project.factory.Bubble;
+import project.substance.Bubble;
 import project.liquids.SparklingWater;
 import project.liquids.Water;
 
@@ -9,18 +9,29 @@ import project.liquids.Water;
 //- [ ] - есть метод open(), который вызывает метод degas() в газировке
 public class Bottle {
 
-    Water water;
-    private double bottleVolume;
+    private Water water;
+    private double volume;
+    private SparklingWater sparklingWater;
+    // есть ли другой способ обращаться к спарклинг вотер?
 
-    public Bottle(double bottleVolume) {
-        int quantityOfBubbles = (int) (10000 * bottleVolume);
-        Bubble[] bubbles = new Bubble[quantityOfBubbles];
-        ((SparklingWater) water).setBubbles(bubbles);
+    public Bubble[] getBubbles() {
+        return bubbles;
     }
 
-    public Bottle(double bottleVolume, Water water) {
-        this.bottleVolume = bottleVolume;
-        this.water = water;
+    public void setBubbles(Bubble[] bubbles) {
+        this.bubbles = bubbles;
+    }
+
+    Bubble[] bubbles;
+
+    public Bottle(double volume) {
+        this.sparklingWater = new SparklingWater();
+        int quantityOfBubbles = (int) (10000 * volume);
+        Bubble[] bubbles = new Bubble[quantityOfBubbles];
+        for (int i = 0; i < bubbles.length; i++) {
+            bubbles[i] = new Bubble("CO2");
+        }
+        sparklingWater.setBubbles(bubbles);
     }
 
     public void warm(int temperature) {
@@ -28,7 +39,8 @@ public class Bottle {
     }
 
     public void open() {
-        ((SparklingWater) water).setOpened(true);
+        sparklingWater.setOpened(true);
+        sparklingWater.isOpened();
     }
 
     public Water getWater() {
