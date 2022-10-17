@@ -8,5 +8,7 @@ public class StringStaticRunner {
         CharPrinter.printCharsFromString(inputString);
 
         DuplicatesPrinter.shouldPrintDuplicatesInString("mama myla ramu mama");
+
+        IntegersPrinter.printAllIntegersFromString("ads1123sd123d4 8!3");
     }
 }
