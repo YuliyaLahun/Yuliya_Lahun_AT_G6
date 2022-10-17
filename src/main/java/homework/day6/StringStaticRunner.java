@@ -6,5 +6,7 @@ public class StringStaticRunner {
         String inputString = "asndsjg";
 
         CharPrinter.printCharsFromString(inputString);
+
+        DuplicatesPrinter.shouldPrintDuplicatesInString("mama myla ramu mama");
     }
 }
