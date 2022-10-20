@@ -8,21 +8,21 @@ public class IntegersPrinter {
     public static void printAllIntegersFromString(String inputString) {
         String[] numbersInString = inputString.split("\\D");
         int counter = 0;
-        for (int i = 0; i < numbersInString.length; i++) {
-            if (!numbersInString[i].equals("")) {
+        for (String s : numbersInString) {
+            if (!s.equals("")) {
                 counter++;
             }
         }
         int[] numbers = new int[counter];
         int counter2 = 0;
-        for (int i = 0; i < numbersInString.length; i++) {
-            if (!numbersInString[i].equals("")) {
-                numbers[counter2] = Integer.parseInt(numbersInString[i]);
+        for (String s : numbersInString) {
+            if (!s.equals("")) {
+                numbers[counter2] = Integer.parseInt(s);
                 counter2++;
             }
         }
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println(numbers[i]);
+        for (int number : numbers) {
+            System.out.println(number);
         }
     }
 }
