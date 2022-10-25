@@ -30,7 +30,7 @@ public class Figures {
             System.out.print(figures.get(i) + " ");
         }
 
-        figures.set(3, "Треугольник");
+        figures.add(3, "Треугольник");
 
         System.out.println(); //for better view of printed figures
         for (String s : figures) {
