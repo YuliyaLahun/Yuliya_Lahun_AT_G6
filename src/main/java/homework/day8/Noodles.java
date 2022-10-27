@@ -2,7 +2,6 @@ package homework.day8;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Noodles {
@@ -33,7 +32,7 @@ public class Noodles {
 
     private static String changeAtoO(String noodle) {
         List<Character> charsFromNoodle = new ArrayList<>();
-        for (char ch : noodle.toCharArray()){
+        for (char ch : noodle.toCharArray()) {
             charsFromNoodle.add(ch);
         }
         for (int i = 0; i < charsFromNoodle.size(); i++) {
@@ -42,7 +41,7 @@ public class Noodles {
             }
         }
         StringBuilder sb = new StringBuilder();
-        for (Character character: charsFromNoodle){
+        for (Character character : charsFromNoodle) {
             sb.append(character);
         }
         return sb.toString();
