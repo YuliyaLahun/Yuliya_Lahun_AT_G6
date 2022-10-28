@@ -26,7 +26,7 @@ public class Doubles {
             double integerPartOfNumber = floor(dbl);
             sumOfFractionalParts += dbl - integerPartOfNumber;
         }
-        System.out.println(sumOfFractionalParts);
+        System.out.println((float)sumOfFractionalParts);
 
         for (int i = 0; i < doubles.size(); i++) {
             System.out.print((int) floor(doubles.get(i)) + " ");
