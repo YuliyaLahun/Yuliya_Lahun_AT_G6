@@ -21,12 +21,12 @@ public class Cars {
 
         BufferedWriter out = new BufferedWriter(new FileWriter("cars.txt"));
         for (String s : cars) {
-            System.out.println("\"" + s + "\"");
+            out.write("\"" + s + "\"\n");
         }
         out.close();
 
-        for (String s: cars){
-            if(s.length()>4){
+        for (String s : cars) {
+            if (s.length() > 4) {
                 cars.remove(s);
             }
         }
