@@ -1,6 +1,5 @@
 package homework.day8;
 
-
 import homework.day8.classes.Sand;
 
 import java.util.ArrayList;
@@ -44,6 +43,5 @@ public class SandRunner {
         for (Map.Entry<Integer, Sand> set : sandMap.entrySet()) {
             System.out.println(set);
         }
-
     }
 }
