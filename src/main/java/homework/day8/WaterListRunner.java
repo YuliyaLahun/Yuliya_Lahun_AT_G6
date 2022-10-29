@@ -9,11 +9,11 @@ public class WaterListRunner {
 
     public static void main(String[] args) {
         List<Water> waterList = Arrays.asList(new Water("Прозрачная", "Нет"),
-                new Water("Прозрачная","Нет"),
-                new Water("Мутная","Аммиачный"));
+                new Water("Прозрачная", "Нет"),
+                new Water("Мутная", "Аммиачный"));
 
-        for (Water water: waterList){
-            System.out.println(water.getColor()+"-"+water.getSmell());
+        for (Water water : waterList) {
+            System.out.println(water.getColor() + "-" + water.getSmell());
         }
     }
 }
