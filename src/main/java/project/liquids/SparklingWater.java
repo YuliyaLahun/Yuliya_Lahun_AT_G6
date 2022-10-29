@@ -2,6 +2,8 @@ package project.liquids;
 
 import project.substance.Bubble;
 
+import java.util.List;
+
 import static java.lang.System.out;
 
 //-  создать класс SparklingWater, являющийся дочерним Water
@@ -11,18 +13,18 @@ import static java.lang.System.out;
 //- [ ] - у газировки есть метод degas(), который удаляет пузырьки по одному и вызывает их лопанье
 public class SparklingWater extends Water {
 
-    private Bubble[] bubbles;
+    private List<Bubble> bubbles;
     private boolean isOpened;
 
     public SparklingWater() {
         this.isOpened();
     }
 
-    public Bubble[] getBubbles() {
+    public List<Bubble> getBubbles() {
         return bubbles;
     }
 
-    public void setBubbles(Bubble[] bubbles) {
+    public void setBubbles(List<Bubble> bubbles) {
         this.bubbles = bubbles;
     }
 
@@ -44,7 +46,7 @@ public class SparklingWater extends Water {
 
     public boolean isSparkle() {
         boolean isSparkle = false;
-        if (this.getBubbles().length > 0) {
+        if (this.getBubbles().size() > 0) {
             isSparkle = true;
         }
         out.printf("Checking if the water is sparkle: %s", isSparkle);
@@ -55,10 +57,10 @@ public class SparklingWater extends Water {
     // выпускает по партии пузырьков из рассчета 10 + 5 * температура_воды
     public void degas() {
         out.println("Degas is started...");
-        for (int i = 0; i < bubbles.length - 1; i++) {
-            bubbles[i].cramp();
-            bubbles[i] = null;
+        for (int i = 0; i < bubbles.size() - 1; i++) {
+            bubbles.get(i).cramp();
         }
+        bubbles = null;
     }
 
 }

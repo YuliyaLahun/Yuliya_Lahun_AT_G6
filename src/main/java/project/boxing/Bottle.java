@@ -4,30 +4,33 @@ import project.liquids.SparklingWater;
 import project.liquids.Water;
 import project.substance.Bubble;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //- [ ] - у него есть обьем
 //- [ ] - есть вода
 //- [ ] - есть метод open(), который вызывает метод degas() в газировке
 public class Bottle {
 
-    Bubble[] bubbles;
+    List<Bubble> bubbles;
     private Water water;
     private double volume;
 
     public Bottle(double volume) {
         this.water = new SparklingWater();
         int quantityOfBubbles = (int) (10000 * volume);
-        Bubble[] bubbles = new Bubble[quantityOfBubbles];
-        for (int i = 0; i < bubbles.length; i++) {
-            bubbles[i] = new Bubble("CO2");
+        this.bubbles = new ArrayList<>(quantityOfBubbles);
+        for (int i = 0; i < quantityOfBubbles; i++) {
+            bubbles.add(new Bubble("CO2"));
         }
         ((SparklingWater) water).setBubbles(bubbles);
     }
 
-    public Bubble[] getBubbles() {
+    public List<Bubble> getBubbles() {
         return bubbles;
     }
 
-    public void setBubbles(Bubble[] bubbles) {
+    public void setBubbles(List<Bubble> bubbles) {
         this.bubbles = bubbles;
     }
 
