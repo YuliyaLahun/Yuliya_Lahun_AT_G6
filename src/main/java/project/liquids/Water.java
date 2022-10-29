@@ -1,6 +1,8 @@
 package project.liquids;
 
-public abstract class Water {
+import project.factory.Transformable;
+
+public abstract class Water implements Transformable {
 
     String transparency = "transparent";
     String smell = "no";

@@ -63,4 +63,8 @@ public class SparklingWater extends Water {
         bubbles = null;
     }
 
+    @Override
+    public void mix() {
+
+    }
 }
