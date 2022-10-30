@@ -1,4 +1,4 @@
-package cycletask;
+package homework.day2.cycletask;
 
 //создать пустой массив типа int и размера n = 7 и заполнить его случайными элементами используя Random.nextInt(n)
 

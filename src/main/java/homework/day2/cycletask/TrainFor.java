@@ -1,4 +1,4 @@
-package cycletask;
+package homework.day2.cycletask;
 
 //используя for вывести в консоль каждое нечетное число от 3 до 19 включительно
 public class TrainFor {
