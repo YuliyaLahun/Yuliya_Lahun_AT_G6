@@ -1,4 +1,4 @@
-package cycletask;
+package homework.day2.cycletask;
 
 
 import java.util.Arrays;

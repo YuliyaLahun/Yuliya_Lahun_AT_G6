@@ -1,4 +1,4 @@
-package cycletask;
+package homework.day2.cycletask;
 
 import java.util.Arrays;
 
@@ -11,6 +11,5 @@ public class ArraySwapFirstAndLast {
         array[array.length - 1] = x;
         System.out.println(Arrays.toString(array));
     }
-
 }
 
