@@ -15,7 +15,8 @@ public class GenerateListOfInt {
         for (int i = minValue; i <= maxValue; i++) {
             list.add(i);
         }
-        System.out.println(list.stream().anyMatch(x -> x % 3 == 0 && x % 5 == 0));
+        System.out.println("Содержатся числа, которые делятся и на 3 и на 5 без остатка: "
+                + list.stream().anyMatch(x -> x % 3 == 0 && x % 5 == 0));
 
     }
 }
