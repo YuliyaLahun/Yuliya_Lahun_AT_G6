@@ -1,6 +1,5 @@
 package homework.day10;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
@@ -12,11 +11,11 @@ public class PersonStream {
     public static void main(String[] args) {
 
         List<Person> people = IntStream.rangeClosed(1, 100).boxed()
-                .map(i -> new Person(getRandomNumberUsingNextInt(15, 31),"name " + i, "surname" + i))
+                .map(i -> new Person(getRandomNumberUsingNextInt(15, 31), "name " + i, "surname" + i))
                 .collect(Collectors.toList());
 
         System.out.println(people.stream()
-                .filter(x -> x.getAge() > 21)
+                .filter(x -> x.getAge() < 21)
                 .peek(x -> System.out.println("name: " + x.getName() + " age:" + x.getAge()))
                 .sorted(Comparator.comparing(Person::getSurname).thenComparing(Person::getName))
                 .limit(4)
@@ -27,7 +26,7 @@ public class PersonStream {
 
     public static int getRandomNumberUsingNextInt(int min, int max) {
         Random random = new Random();
-        return random.nextInt(max - min) + min;
+        return random.nextInt((max - min + 1) + min);
     }
 
 }
