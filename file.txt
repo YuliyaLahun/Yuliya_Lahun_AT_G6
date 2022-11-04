@@ -1,1 +1,36 @@
 mama myla ramu
+access_log.2020.09.07 212.168.101.5 granted
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.122.6 denied
+Date log:
+mama myla ramu
+access_log.2020.09.07 212.168.101.5 granted
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.122.6 denied
+Date log:
+mama myla ramu
+access_log.2020.09.07 212.168.101.5 granted
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.122.6 denied
+Date log:
+mama myla ramu
+<br>access_log.2020.09.07 212.168.101.5 granted
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+<br>access_log.2020.09.07 212.168.122.6 denied
+Date log:
+mama myla ramu
+access_log.2020.09.07 212.168.101.5 granted
+<br>access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.122.6 denied
+<br>Date log:access_log.2020.09.07 212.168.101.5 granted
+mama myla ramu
+access_log.2020.09.07 212.168.101.5 granted
+<br>access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.122.6 denied
+Date log:
