@@ -1,6 +1,8 @@
 package homework.day2.cycletask;
 
 
+import java.util.Arrays;
+
 public class SmallestElementInArray {
 
 
@@ -12,5 +14,9 @@ public class SmallestElementInArray {
             }
         }
         System.out.println(x);
+    }
+
+    public void findSmallestElementInArrayStream(int[] array) {
+        System.out.println("min element in array is: " + Arrays.stream(array).min().getAsInt());
     }
 }

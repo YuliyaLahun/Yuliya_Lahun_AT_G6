@@ -2,6 +2,7 @@ package homework.day2.cycletask;
 
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class SortingArray {
 
@@ -19,6 +20,10 @@ public class SortingArray {
         }
 
         System.out.println(Arrays.toString(array));
+    }
+
+    public void sortArrayByStream(int[] array){
+        System.out.println(Arrays.stream(array).boxed().sorted((x,y)-> y- x).collect(Collectors.toList()));
     }
 
 //        for (int i = 0; i < arr.length; i++) {
