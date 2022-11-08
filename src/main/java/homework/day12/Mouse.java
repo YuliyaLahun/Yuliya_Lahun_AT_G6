@@ -11,7 +11,7 @@ public class Mouse {
         return name;
     }
 
-    private String name = "Mouse";
+    private String name = pattern.substring(0,5);
 
     public Mouse(int number){
         this.name = name + " " + number;
