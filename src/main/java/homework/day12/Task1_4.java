@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Task1_4 {
 
-    private static int numberOfMouses = 3;
+    private static int numberOfMouses = 280;
+    static Object lock = new Object();
+
 
     public static void main(String[] args) throws InterruptedException {
         List<Mouse> mouses = new ArrayList<>();
@@ -13,24 +15,28 @@ public class Task1_4 {
             mouses.add(new Mouse(i));
         }
 
+
         Thread t1 = new Thread(()->{
-            peepAndRemove(mouses);
+                peepAndRemove(mouses);
         });
 
         Thread t2 = new Thread(()->{
-            peepAndRemove(mouses);
-        });
+                peepAndRemove(mouses);
+                        });
 
         Thread t3 = new Thread(()->{
-            peepAndRemove(mouses);
+                peepAndRemove(mouses);
+
         });
 
         Thread t4 = new Thread(()->{
-            peepAndRemove(mouses);
+                peepAndRemove(mouses);
+
         });
 
         Thread t5 = new Thread(()->{
-            peepAndRemove(mouses);
+                peepAndRemove(mouses);
+
         });
 
 
@@ -44,17 +50,15 @@ public class Task1_4 {
 
     private static void peepAndRemove(List<Mouse> mouses) {
         while(!mouses.isEmpty()){
-            Mouse mouse = mouses.stream().findAny().get();
-            try {
-                mouse.peep();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            mouses.remove(mouse);
-            try {
-                Thread.currentThread().sleep(300);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            synchronized (lock) {
+                try {
+                    mouses.get(0).peep();
+                    System.out.println(Thread.currentThread().getName());
+                    mouses.remove(0);
+                    Thread.currentThread().sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
