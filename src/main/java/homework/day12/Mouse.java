@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Mouse {
 
+    public static String getPattern() {
+        return pattern;
+    }
+
     private static String pattern = "Mouse \\d";
 
     public String getName() {
@@ -26,5 +30,12 @@ public class Mouse {
                 .get();
         System.out.printf("Mouse %d PEEP!",numberOfMouse);
         Thread.currentThread().sleep(2000);
+    }
+
+    @Override
+    public String toString() {
+        return "Mouse{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
