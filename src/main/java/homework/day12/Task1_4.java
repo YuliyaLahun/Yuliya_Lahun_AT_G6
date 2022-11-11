@@ -5,9 +5,8 @@ import java.util.List;
 
 public class Task1_4 {
 
-    private static int numberOfMouses = 280;
     static Object lock = new Object();
-
+    private static int numberOfMouses = 280;
 
     public static void main(String[] args) throws InterruptedException {
         List<Mouse> mouses = new ArrayList<>();
@@ -16,26 +15,26 @@ public class Task1_4 {
         }
 
 
-        Thread t1 = new Thread(()->{
-                peepAndRemove(mouses);
+        Thread t1 = new Thread(() -> {
+            peepAndRemove(mouses);
         });
 
-        Thread t2 = new Thread(()->{
-                peepAndRemove(mouses);
-                        });
-
-        Thread t3 = new Thread(()->{
-                peepAndRemove(mouses);
-
+        Thread t2 = new Thread(() -> {
+            peepAndRemove(mouses);
         });
 
-        Thread t4 = new Thread(()->{
-                peepAndRemove(mouses);
+        Thread t3 = new Thread(() -> {
+            peepAndRemove(mouses);
 
         });
 
-        Thread t5 = new Thread(()->{
-                peepAndRemove(mouses);
+        Thread t4 = new Thread(() -> {
+            peepAndRemove(mouses);
+
+        });
+
+        Thread t5 = new Thread(() -> {
+            peepAndRemove(mouses);
 
         });
 
@@ -49,7 +48,7 @@ public class Task1_4 {
     }
 
     private static void peepAndRemove(List<Mouse> mouses) {
-        while(!mouses.isEmpty()){
+        while (!mouses.isEmpty()) {
             synchronized (lock) {
                 try {
                     mouses.get(0).peep();

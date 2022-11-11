@@ -8,11 +8,9 @@ import java.util.stream.Collectors;
 
 public class Task1_5 {
 
-    private static int numberOfMouses = 380;
-
-    private static  Pattern pattern = Pattern.compile("\\d+");
-
     static Object lock = new Object();
+    private static int numberOfMouses = 380;
+    private static Pattern pattern = Pattern.compile("\\d+");
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -29,26 +27,26 @@ public class Task1_5 {
                 })
                 .collect(Collectors.toList());
 
-        Thread t1 = new Thread(()->{
+        Thread t1 = new Thread(() -> {
             peepAndRemoveUnEvenMouse(mouses, unEvenMouses);
         });
 
-        Thread t2 = new Thread(()->{
+        Thread t2 = new Thread(() -> {
             peepAndRemoveUnEvenMouse(mouses, unEvenMouses);
         });
-        Thread t3 = new Thread(()->{
+        Thread t3 = new Thread(() -> {
             peepAndRemoveUnEvenMouse(mouses, unEvenMouses);
         });
-        Thread t4 = new Thread(()->{
+        Thread t4 = new Thread(() -> {
             peepAndRemoveUnEvenMouse(mouses, unEvenMouses);
         });
-        Thread t5 = new Thread(()->{
+        Thread t5 = new Thread(() -> {
             peepAndRemoveUnEvenMouse(mouses, unEvenMouses);
         });
-        Thread t6 = new Thread(()->{
+        Thread t6 = new Thread(() -> {
             peepAndRemoveUnEvenMouse(mouses, unEvenMouses);
         });
-        Thread t7 = new Thread(()->{
+        Thread t7 = new Thread(() -> {
             peepAndRemoveUnEvenMouse(mouses, unEvenMouses);
         });
 
@@ -63,22 +61,22 @@ public class Task1_5 {
 
     }
 
-    private static void peepAndRemoveUnEvenMouse(List<Mouse> mouses,List<Mouse> unEvenMouses) {
+    private static void peepAndRemoveUnEvenMouse(List<Mouse> mouses, List<Mouse> unEvenMouses) {
 
-            while (!unEvenMouses.isEmpty()) {
-                synchronized (lock) {
-                    try {
-                        unEvenMouses.get(0).peep();
-                        mouses.remove(unEvenMouses.get(0));
-                        unEvenMouses.remove(0);
-                        System.out.println(Thread.currentThread().getName());
-                        Thread.currentThread().sleep(250);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
+        while (!unEvenMouses.isEmpty()) {
+            synchronized (lock) {
+                try {
+                    unEvenMouses.get(0).peep();
+                    mouses.remove(unEvenMouses.get(0));
+                    unEvenMouses.remove(0);
+                    System.out.println(Thread.currentThread().getName());
+                    Thread.currentThread().sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+
             }
+        }
     }
 
 }
