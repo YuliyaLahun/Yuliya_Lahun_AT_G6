@@ -1,35 +1,23 @@
 package homework.day12;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Mouse {
 
-    public static String getPattern() {
-        return pattern;
-    }
 
-    private static String pattern = "Mouse \\d";
+    private static final String pattern = "Mouse %s";
+
+    private final String name;
 
     public String getName() {
         return name;
     }
 
-    private String name = pattern.substring(0,5);
-
-    public Mouse(int number){
-        this.name = name + " " + number;
+    public Mouse(int number) {
+        this.name = String.format(pattern, number);
     }
 
     public void peep() throws InterruptedException {
-        List<String> list = Arrays.asList(name.split("Mouse "));
-        int numberOfMouse = list.stream()
-                .filter(x->!x.equals(""))
-                .map(Integer::parseInt)
-                .findFirst()
-                .get();
-        System.out.printf("Mouse %d PEEP!",numberOfMouse);
-        Thread.currentThread().sleep(2000);
+        System.out.printf("%s PEEP!", name);
+        Thread.sleep(2000);
     }
 
     @Override

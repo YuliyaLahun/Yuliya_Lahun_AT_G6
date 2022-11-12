@@ -1,6 +1,7 @@
 package homework.day12;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,9 +13,11 @@ public class Task1_5 {
     private static int numberOfMouses = 380;
     private static Pattern pattern = Pattern.compile("\\d+");
 
+
     public static void main(String[] args) throws InterruptedException {
 
-        List<Mouse> mouses = new ArrayList<>();
+        List<Mouse> mouses = Collections.synchronizedList(new ArrayList<>());
+        ;
         for (int i = 1; i <= numberOfMouses; i++) {
             mouses.add(new Mouse(i));
         }
@@ -57,7 +60,6 @@ public class Task1_5 {
         t5.start();
         t6.start();
         t7.start();
-
 
     }
 

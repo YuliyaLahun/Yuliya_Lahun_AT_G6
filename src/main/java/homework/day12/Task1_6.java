@@ -55,13 +55,6 @@ public class Task1_6 {
         t5.start();
         t6.start();
 
-        t1.join();
-        t2.join();
-        t3.join();
-        t4.join();
-        t5.join();
-        t6.join();
-
     }
 
     private static void peepAndRemoveUnEvenMouse(List<Mouse> mouses, List<Mouse> evenMouses) {
