@@ -1,9 +1,11 @@
-package project.boxing;
+package project.vessel;
 
-import project.factory.Transformable;
-import project.liquids.SparklingWater;
-import project.liquids.Water;
-import project.substance.Bubble;
+import project.material.MaterialTypes;
+import project.material.Plastic;
+import project.stuff.Transformable;
+import project.stuff.SparklingWater;
+import project.stuff.Water;
+import project.stuff.Bubble;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +15,16 @@ import java.util.List;
 //- [ ] - есть метод open(), который вызывает метод degas() в газировке
 public class Bottle extends Vessel implements Containable{
 
+    private Transformable stuff;
+
+
     List<Bubble> bubbles;
     private Water water;
     private double volume;
 
 
-    public Bottle(double volume, double diameter, int weight, Material material) {
-        super(volume, diameter, weight, material);
+    public Bottle(double volume, double diameter, int weight, MaterialTypes material) throws InterruptedException {
+        super(volume, 2, weight, material);
         this.water = new SparklingWater();
         int quantityOfBubbles = (int) (10000 * volume);
         this.bubbles = new ArrayList<>(quantityOfBubbles);
@@ -29,7 +34,7 @@ public class Bottle extends Vessel implements Containable{
         ((SparklingWater) water).setBubbles(bubbles);
     }
 
-    public Bottle(double volume) {
+    public Bottle(double volume) throws InterruptedException {
         this(1, 2, 100, new Plastic(0.5, "white", 0.3));
     }
 
@@ -65,14 +70,9 @@ public class Bottle extends Vessel implements Containable{
         return 0;
     }
 
-    public void open() {
+    public void open() throws InterruptedException {
         ((SparklingWater) water).setOpened(true);
         ((SparklingWater) water).isOpened();
-    }
-
-    @Override
-    public void close() {
-
     }
 
     public Water getWater() {

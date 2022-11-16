@@ -1,6 +1,7 @@
-package project.liquids;
+package project.stuff;
 
-import project.substance.Bubble;
+import project.stuff.Bubble;
+import project.stuff.Water;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class SparklingWater extends Water {
     private List<Bubble> bubbles;
     private boolean isOpened;
 
-    public SparklingWater() {
+    public SparklingWater() throws InterruptedException {
         this.isOpened();
     }
 
@@ -37,7 +38,8 @@ public class SparklingWater extends Water {
         this.isOpened = isOpened;
     }
 
-    public void isOpened() {
+    public void isOpened() throws InterruptedException {
+        Thread.sleep(2000);
         if (this.isOpened) {
             out.println("The bottle is opened, starting degas");
             this.degas();
@@ -53,7 +55,7 @@ public class SparklingWater extends Water {
         return isSparkle;
     }
 
-    //- [ ] ------ есть приватный метод degas(), который каждую секунду
+    // ------ есть приватный метод degas(), который каждую секунду
     // выпускает по партии пузырьков из рассчета 10 + 5 * температура_воды
     public void degas() {
         out.println("Degas is started...");
@@ -64,7 +66,12 @@ public class SparklingWater extends Water {
     }
 
     @Override
-    public void mix() {
+    public void setTemperature(int temperature) {
 
+    }
+
+    @Override
+    public void setOpened() {
+        this.isOpened = true;
     }
 }
