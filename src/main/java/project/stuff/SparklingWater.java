@@ -1,8 +1,7 @@
 package project.stuff;
 
-import project.stuff.Bubble;
-import project.stuff.Water;
-
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static java.lang.System.out;
@@ -14,10 +13,13 @@ import static java.lang.System.out;
 //- [ ] - у газировки есть метод degas(), который удаляет пузырьки по одному и вызывает их лопанье
 public class SparklingWater extends Water {
 
-    private List<Bubble> bubbles;
+    private List<Bubble> bubbles = new ArrayList<>();
     private boolean isOpened;
 
-    public SparklingWater() throws InterruptedException {
+    public SparklingWater(double volume) throws InterruptedException {
+        for (int i = 1; i <= (int)10000 * volume; i++) {
+            this.bubbles.add(new Bubble("CO"));
+        }
         this.isOpened();
     }
 
@@ -29,21 +31,25 @@ public class SparklingWater extends Water {
         this.bubbles = bubbles;
     }
 
-    public void pump() {
-        out.println("Setting bubbles to the water");
-        this.setBubbles(bubbles);
-    }
-
     public void setOpened(boolean isOpened) {
         this.isOpened = isOpened;
     }
 
     public void isOpened() throws InterruptedException {
-        Thread.sleep(2000);
-        if (this.isOpened) {
-            out.println("The bottle is opened, starting degas");
-            this.degas();
-        }
+        Thread t1 = new Thread(()->{
+            while (!this.bubbles.isEmpty()){
+                try {
+                    Thread.sleep(2000);
+                    if (this.isOpened) {
+                        out.println("The bottle is opened, starting degas");
+                        this.degas();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        t1.start();
     }
 
     public boolean isSparkle() {
@@ -59,10 +65,10 @@ public class SparklingWater extends Water {
     // выпускает по партии пузырьков из рассчета 10 + 5 * температура_воды
     public void degas() {
         out.println("Degas is started...");
-        for (int i = 0; i < bubbles.size() - 1; i++) {
+        for (int i = 0; i < bubbles.size(); i++) {
             bubbles.get(i).cramp();
+            bubbles.remove(i);
         }
-        bubbles = null;
     }
 
     @Override
