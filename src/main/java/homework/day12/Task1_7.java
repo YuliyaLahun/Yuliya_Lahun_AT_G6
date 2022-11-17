@@ -9,7 +9,7 @@ public class Task1_7 {
     public static void main(String[] args) {
 
         List<Mouse> mouses = new ArrayList<>();
-        for (int i = 1; i <= 40; i++) {
+        for (int i = 1; i <= 240; i++) {
             mouses.add(new Mouse(i));
         }
 

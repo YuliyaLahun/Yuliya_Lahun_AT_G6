@@ -28,23 +28,23 @@ public class Task1_6 {
                 .collect(Collectors.toList());
 
         Thread t1 = new Thread(() -> {
-            peepAndRemoveUnEvenMouse(mouses, evenMouses);
+            peepAndRemoveEvenMouse(mouses, evenMouses);
         });
 
         Thread t2 = new Thread(() -> {
-            peepAndRemoveUnEvenMouse(mouses, evenMouses);
+            peepAndRemoveEvenMouse(mouses, evenMouses);
         });
         Thread t3 = new Thread(() -> {
-            peepAndRemoveUnEvenMouse(mouses, evenMouses);
+            peepAndRemoveEvenMouse(mouses, evenMouses);
         });
         Thread t4 = new Thread(() -> {
-            peepAndRemoveUnEvenMouse(mouses, evenMouses);
+            peepAndRemoveEvenMouse(mouses, evenMouses);
         });
         Thread t5 = new Thread(() -> {
-            peepAndRemoveUnEvenMouse(mouses, evenMouses);
+            peepAndRemoveEvenMouse(mouses, evenMouses);
         });
         Thread t6 = new Thread(() -> {
-            peepAndRemoveUnEvenMouse(mouses, evenMouses);
+            peepAndRemoveEvenMouse(mouses, evenMouses);
         });
 
 
@@ -57,7 +57,7 @@ public class Task1_6 {
 
     }
 
-    private static void peepAndRemoveUnEvenMouse(List<Mouse> mouses, List<Mouse> evenMouses) {
+    private static void peepAndRemoveEvenMouse(List<Mouse> mouses, List<Mouse> evenMouses) {
 
         while (!evenMouses.isEmpty()) {
             synchronized (lock) {
