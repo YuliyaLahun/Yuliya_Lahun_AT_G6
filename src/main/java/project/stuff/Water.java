@@ -1,6 +1,4 @@
-package project.liquids;
-
-import project.factory.Transformable;
+package project.stuff;
 
 public abstract class Water implements Transformable {
 
@@ -40,4 +38,6 @@ public abstract class Water implements Transformable {
     public void setColor(String color) {
         this.color = color;
     }
+
+
 }

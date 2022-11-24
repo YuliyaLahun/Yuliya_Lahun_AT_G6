@@ -1,9 +1,11 @@
-package project.boxing;
+package project.vessel;
 
-import project.factory.Transformable;
-import project.liquids.SparklingWater;
-import project.liquids.Water;
-import project.substance.Bubble;
+import project.material.MaterialTypes;
+import project.material.Plastic;
+import project.stuff.Bubble;
+import project.stuff.SparklingWater;
+import project.stuff.Transformable;
+import project.stuff.Water;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,25 +13,20 @@ import java.util.List;
 //- [ ] - у него есть обьем
 //- [ ] - есть вода
 //- [ ] - есть метод open(), который вызывает метод degas() в газировке
-public class Bottle extends Vessel implements Containable{
+public class Bottle extends Vessel implements Containable {
 
     List<Bubble> bubbles;
+    private Transformable stuff;
     private Water water;
     private double volume;
 
 
-    public Bottle(double volume, double diameter, int weight, Material material) {
-        super(volume, diameter, weight, material);
-        this.water = new SparklingWater();
-        int quantityOfBubbles = (int) (10000 * volume);
-        this.bubbles = new ArrayList<>(quantityOfBubbles);
-        for (int i = 0; i < quantityOfBubbles; i++) {
-            bubbles.add(new Bubble("CO2"));
-        }
-        ((SparklingWater) water).setBubbles(bubbles);
+    public Bottle(double volume, double diameter, int weight, MaterialTypes material) throws InterruptedException {
+        super(volume, 2, weight, material);
+        this.stuff = new SparklingWater(volume);
     }
 
-    public Bottle(double volume) {
+    public Bottle(double volume) throws InterruptedException {
         this(1, 2, 100, new Plastic(0.5, "white", 0.3));
     }
 
@@ -47,17 +44,17 @@ public class Bottle extends Vessel implements Containable{
 
     @Override
     public void addStuff(Transformable stuff) {
-        this.water = water;
+        this.stuff = stuff;
     }
 
     @Override
     public Transformable removeStuff() {
-        return null;
+        return this.stuff = null;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return this.stuff == null;
     }
 
     @Override
@@ -65,14 +62,8 @@ public class Bottle extends Vessel implements Containable{
         return 0;
     }
 
-    public void open() {
-        ((SparklingWater) water).setOpened(true);
-        ((SparklingWater) water).isOpened();
-    }
-
-    @Override
-    public void close() {
-
+    public void open() throws InterruptedException {
+        this.stuff.setOpened();
     }
 
     public Water getWater() {

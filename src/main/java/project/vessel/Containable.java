@@ -1,6 +1,6 @@
-package project.boxing;
+package project.vessel;
 
-import project.factory.Transformable;
+import project.stuff.Transformable;
 
 public interface Containable {
 
@@ -12,7 +12,8 @@ public interface Containable {
 
     int getFreeSpace();
 
-    void open();
+    void open() throws InterruptedException;
 
-    void close();
+    public void warm(int temperature);
+
 }

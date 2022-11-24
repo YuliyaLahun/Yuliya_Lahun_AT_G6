@@ -1,7 +1,7 @@
-package project.boxing;
+package project.material;
 
 
-public class Plastic extends Material{
+public class Plastic extends MaterialTypes {
 
     public Plastic(double thermalConductivity, String color, double density) {
         super(thermalConductivity, color, density);

@@ -1,12 +1,12 @@
-package project.factory;
+package project.runner;
 
-import project.boxing.Bottle;
+import project.vessel.Bottle;
 
 //- [ ] в нем создать 3 бутылки, объёмом 0.5, 1, 1.5 лира с газировкой
 //- [ ] - открыть поочередно все бутылки и выпустить из них газ
 public class Runner {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Bottle bottleHalfLiter = new Bottle(0.5);
         bottleHalfLiter.open();

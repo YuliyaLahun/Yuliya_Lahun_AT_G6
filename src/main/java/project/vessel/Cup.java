@@ -1,12 +1,15 @@
-package project.boxing;
+package project.vessel;
 
 
-import project.factory.Transformable;
+import project.material.MaterialTypes;
+import project.stuff.Transformable;
 
 public class Cup extends Vessel implements Containable{
 
-    public Cup(double volume, double diameter, int weight, Material material) {
-        super(volume, diameter, weight, material);
+    private Transformable stuff;
+
+    public Cup(double volume, double diameter, int weight, MaterialTypes material) {
+        super(volume, 8, weight, material);
     }
 
     @Override
@@ -35,7 +38,8 @@ public class Cup extends Vessel implements Containable{
     }
 
     @Override
-    public void close() {
+    public void warm(int temperature) {
 
     }
+
 }
