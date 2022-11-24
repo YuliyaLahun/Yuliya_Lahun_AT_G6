@@ -1,21 +1,18 @@
 package homework.day12;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Hedgehog {
 
-    private String pattern = "Hedgehog \\d";
-    private String name = "Hedgehog";
+    private String pattern = "Hedgehog %s";
+    private String name;
 
-    public Hedgehog(int number){
-        this.name = name + " " + number;
+    public Hedgehog(int number) {
+
+        this.name = String.format(pattern, number);
     }
 
     public void tellMe() throws InterruptedException {
-        List<String> list = Arrays.asList(name.split("\\d"));
-        int numberOfHedgehog = list.stream().filter(x->x.startsWith("H")).map(Integer::parseInt).findFirst().get();
-        System.out.printf("I am Hedgehog %d!",numberOfHedgehog);
+
+        System.out.printf("I am " + name + "!");
         Thread.currentThread().sleep(50);
     }
 }
