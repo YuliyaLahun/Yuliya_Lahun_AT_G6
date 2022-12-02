@@ -1,0 +1,57 @@
+облако
+//*[@id="ph-whiteline"]/*/*/*[3]
+//*[@href="https://trk.mail.ru/c/pqaft6?mt_sub1=mail.ru"]
+
+mail.ru
+//*[@id="ph-whiteline"]/*/*/*[1]
+//*[@href="https://trk.mail.ru/c/ds8xq6?mt_sub1=mail.ru"]
+
+почта
+//*[@id="mailbox"]/*/*/*[1]
+//*[@href="https://trk.mail.ru/c/veoz41"]
+
+войти
+//*[@data-testid="enter-mail-primary"]
+//*[@id="mailbox"]/*/*[2]
+
+создать почту
+//*[@data-testid="mailbox-create-link"]
+//*[@id="mailbox"]/*[2]/*
+
+город
+//*[@data-testid="weather-city"]
+//*[@name="clb1221590"]
+
+значок погоды
+//*[@data-testid="weather-image"]
+//*[@class="weather svelte-xn9nd0"]/*[2]/*[1]
+
+температура
+//*[@data-testid="weather-temp"]
+
+подробнее
+//*[@data-testid="weather-more"]
+//*[@name="clb1221590"]/following-sibling::*
+
+регистрация
+//*[@class="ph-auth svelte-1hiqrvn"]/*[1]
+//*[contains(@class, "ph-project__register")]
+
+войти (кнопка справа) гы:)
+//*[@class="ph-login svelte-1hiqrvn"]
+//*[starts-with(@class, "ph-login")]
+
+найти
+//*[@class="search-arrow__button"]
+//*[@class="search-arrow__button-text"]/preceding-sibling::*[1]
+
+леди
+//*[@href="//lady.mail.ru/"]/text()
+//*[@data-testid="news-tabs"]/*[4]/text()
+
+вторая новость
+//*[@data-testid="news-content"]/*[2]
+//*[starts-with(@class,"tabs-content")]/*[position()=2]//a
+
+логотип
+//*[@class="logo svelte-3hymh3 logo_noauth"]/a[@name='clb831530']
