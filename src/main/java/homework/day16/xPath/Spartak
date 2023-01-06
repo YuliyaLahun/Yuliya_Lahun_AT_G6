@@ -1,0 +1,65 @@
+1.Logo:
+//img[@alt='логотип Спартак']
+
+//*[@class="header__logo"]
+
+
+2. Search:
+//i[@class='search fa search-btn lupa']
+
+//ul[@class='nav navbar-nav navbar-border-bottom navbar-right list-unstyled hidden-xs hidden-sm']/li/i
+
+//*[@class="lang-block"]/*[1]
+
+3. Eye:
+//img[@src='/include/eye.svg']
+
+//span/a/img[@title]
+
+4. RU
+//a[@class='header__lang__item header__lang__item_ru active']
+
+//*[@class="header__lang"]/*[1]/text()
+
+5. CH
+//a[@href='/cn/']
+
+//a[text()="Ch"]
+
+
+6. Right arrow
+//li[@class='flex-nav-next']/a[@href='#']
+
+//*[@class="flex-nav-next"]/*
+
+
+7. Listing line:
+//ol[@class='flex-control-nav flex-control-paging']/li[2]
+
+
+8. VK
+//img[@src='/bitrix/templates/our_shop/images/VK.svg']
+
+//*[@class="top_slider_wrapp"]/*/*/*[@href="https://vk.com/spartakby"]/*
+
+
+9. YouTube
+//img[@src='/bitrix/templates/our_shop/images/youtube.svg']
+
+//*[@class="top_slider_wrapp"]/*[@class="social_list"]/*[5]/a/*
+
+
+10. Impresso
+//*[@class="menu full"]/*[2]/div/div/*[2]
+
+//*[@href="/products/Impresso/"] - not unique, but the first one
+
+11. Information for partners
+//*[@class="has_child"]/*[contains(text(),"Информация для партнеров")]
+
+//*[@class="content_menu"]/*/*[2]/*[3]/*/span
+
+12.Catalogue
+//*[@class="download-catalog"]
+
+//*[@id="select-lang"]/following-sibling::*
